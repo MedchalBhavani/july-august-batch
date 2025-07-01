@@ -1,0 +1,144 @@
+/*Build a responsive personal portfolio website*/
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bhavani | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+:root {
+  --primary-color: #6200ea;
+  --bg-color: #fdfdfd;
+  --text-color: #333;
+  --spacing: 1.5rem;
+  --max-width: 960px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: var(--spacing);
+}
+
+header {
+  background: var(--primary-color);
+  color: white;
+  padding: 1rem 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  padding: 3rem var(--spacing);
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+section {
+  max-width: var(--max-width);
+  margin: 2rem auto;
+  padding: 0 var(--spacing);
+}
+
+.projects-list {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  background-color: #eee;
+  margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  
+}
+
+    
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1 class="logo">Bhavani</h1>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img src=""
+    <h2>Hi, I'm Bhavani 👋</h2>
+    <p>Frontend Developer passionate about UI/UX design and
+    <h3>About Me</h3>
+    <p>I’m a developer who loves building responsive and accessible websites.</p>
+  </section>
+
+  <section id="projects">
+    <h3>Projects</h3>
+    <ul class="projects-list">
+      <li>🌦️ Weather App</li>
+      <li>📝 Task Manager</li>
+      <li>📸 Image Gallery</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h3>Contact Me</h3>
+    <p>Email: <a href="mailto:bhavani@example.com">bhavani@example.com</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Bhavani. All rights reserved.</p>
+  </footer>
+</body>
+</html>
