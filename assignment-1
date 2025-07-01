@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Validation</title>
+    <style>
+  * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f2f5;
+      }
+
+      form {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+      }
+
+      h1 {
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      input[type="tel"],
+      select,
+      input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+
+      input[type="checkbox"] {
+        margin-right: 5px;
+      }
+
+  input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+  </style>
+    </head>
+  <body>
+    <form action="/action.php">
+      <h1>Full Name</h1>
+      <input type="text" name="fullName" required minlength="3" />
+
+      <h1>Email</h1>
+      <input type="email" name="email" required />
+
+      <h1>Password</h1>
+      <input type="password" name="password" required minlength="6" />
+
+      <h1>Phone Number</h1>
+      <input type="tel" name="pnumber" required pattern="\d{10}" />
+
+      <h1>Position Applying</h1>
+      <select name="position" required>
+        <option value="">--Select--</option>
+        <option value="frontend">Frontend</option>
+        <option value="backend">Backend</option>
+        <option value="fullstack">Fullstack</option>
+      </select>
+
+      <h1>Upload Resume</h1>
+      <input type="file" name="resume" required />
+
+      <br /><br />
+      <input type="checkbox" name="terms" id="terms" required />
+      <label for="terms">I agree to the Terms and Conditions</label>
+
+      <br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+    <script>
+        const form = document.getElementById("registrationForm");
+  
+        form.addEventListener("submit", function (event) {
+          event.preventDefault(); // prevent form from submitting
+  
+          const fullName = form.fullName.value;
+          const email = form.email.value;
+          const phone = form.pnumber.value;
+          const position = form.position.value;
+          const resume = form.resume.files[0]?.name || "No file selected";
+  
+          // Display values
+          document.getElementById("nameOutput").textContent = "Full Name: " + fullName;
+          document.getElementById("emailOutput").textContent = "Email: " + email;
+          document.getElementById("phoneOutput").textContent = "Phone Number: " + phone;
+          document.getElementById("positionOutput").textContent = "Position: " + position;
+          document.getElementById("resumeOutput").textContent = "Resume File: " + resume;
+  
+          document.getElementById("output").style.display = "block";
+        });
+      </script>
+ </body>
+</html>
