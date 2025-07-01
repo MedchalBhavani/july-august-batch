@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Profile Card</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<style>
+
+
+:root {
+  --bg-color: #f4f4f4;
+  --card-bg: white;
+  --text-color: #333;
+  --primary-color: #6200ea;
+  --padding: 1.5rem;
+  --border-radius: 12px;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 90%;
+  max-width: 350px;
+  transition: all 0.3s ease-in-out;
+}
+
+.avatar {
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.name {
+  color: var(--primary-color);
+  margin: 0.5rem 0;
+}
+
+.role {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.description {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+/* 🧠 Responsive Media Queries */
+
+@media (max-width: 600px) {
+  :root {
+    --padding: 1rem;
+    --border-radius: 10px;
+  }
+
+  .description {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .card {
+    max-width: 400px;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card {
+    max-width: 450px;
+    padding: 2rem;
+  }
+
+  .name {
+    font-size: 1.8rem;
+  }
+}
+
+</style>
+
+<body>
+  <div class="card">
+    <img src="/profileimage.jpg"  width="100px", height="100px"alt="Profile Photo" class="avatar" />
+    <h2 class="name">Bhavani M</h2>
+    <p class="role">Frontend Developer</p>
+    <p class="bio">Passionate about creating beautiful and responsive UIs with HTML, CSS, and JavaScript.</p>
+    <button class="btn">Follow</button>
+  </div>
+</body>
+</html>
+
+
